@@ -1,0 +1,24 @@
+package FirstPackage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+public class Assertions {
+
+	public static void main(String[] args) {
+System.setProperty("webdriver.chrome.driver","C:\\Users\\91934\\Downloads\\chromedriver_win32\\chromedriver.exe");
+WebDriver driver=new ChromeDriver();
+driver.get("https://book.spicejet.com/");
+String returndatefielddisplay=driver.findElement(By.id("marketDate_2")).getAttribute("style");
+System.out.println(returndatefielddisplay);
+//Assert.assertTrue(returndatefielddisplay.contains("1"));
+//bcoz returndatefielddisplay means value of attribute that is style and it contains 0.5
+//Assert.assertFalse(returndatefielddisplay.contains("0.5"));
+Assert.assertTrue(returndatefielddisplay.contains("0.5"));
+System.out.println("100");
+System.out.println("1020");
+	}
+
+}

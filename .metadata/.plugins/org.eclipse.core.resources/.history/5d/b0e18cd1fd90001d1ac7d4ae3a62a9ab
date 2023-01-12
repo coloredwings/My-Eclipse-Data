@@ -1,0 +1,11 @@
+package TESTNG;
+
+public class BasicTestng {
+	@Test
+	public void Demo()
+	{
+		
+		System.out.println("hello");
+	}
+		
+}

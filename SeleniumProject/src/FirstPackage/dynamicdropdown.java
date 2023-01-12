@@ -1,0 +1,86 @@
+package FirstPackage;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class dynamicdropdown {
+	static WebDriver driver;
+public void Destinations(String From, String To)
+{
+	driver.findElement(By.id("ControlGroupSearchView_AvailabilitySearchInputSearchVieworiginStation1_CTXT")).click();
+	driver.findElement(By.xpath("//a[@value='"+From+"']")).click();
+	driver.findElement(By.xpath("//a[@value='"+To+"']")).click();
+}
+public void bookingdate(String departdate,String returndate )
+{
+	driver.findElement(By.xpath("//input[@type='text']")).click();
+	driver.findElement(By.xpath("//a[@value='"+departdate+"']")).click();
+	driver.findElement(By.xpath("//a[@value='"+returndate+"']")).click();
+}
+
+	public static void main(String[] args) {
+System.setProperty("webdriver.chrome.driver","C:\\Users\\91934\\Downloads\\chromedriver_win32\\chromedriver.exe");
+ driver=new ChromeDriver();
+driver.get("https://book.spicejet.com");
+driver.manage().window().maximize();
+dynamicdropdown dd=new dynamicdropdown();
+dd.Destinations("BLR","MAA");
+	String departuredate="15";
+	String departmonth="March";
+	JavascriptExecutor executor = (JavascriptExecutor)driver;
+	executor.executeScript("arguments[0].click();",driver.findElement(By.id("custom_date_picker_id_1")));
+//id is from departurecalender date
+for(int headers=1;headers<=10;headers++)
+	//here 10 is number of actions on next symbol in calender
+	//firstheader class bcoz we have 2 pages in calender so we r writing 2 strings first nd last
+{
+	String firstheader=driver.findElement(By.xpath("//div[@class='ui-datepicker-group ui-datepicker-group-first']")).getText();	
+	System.out.println(firstheader);
+
+	String SecondHeader=driver.findElement(By.xpath("//div[@class='ui-datepicker-group ui-datepicker-group-last']")).getText();	
+	System.out.println(SecondHeader);
+
+	if(firstheader.equals(departmonth))
+	{
+		List<WebElement> Days = driver.findElements(By.xpath("//div[contains(@class,'ui-datepicker-group-first')] //a[@class='ui-state-default']"));
+		System.out.println(Days.size());
+		for(WebElement Day:Days)
+		{
+			System.out.println(Day.getText());
+			if(Day.getText().equals(departuredate))
+			{
+				Day.click();
+				break;
+			}
+		}
+	}
+	else if(SecondHeader.equals(departmonth))
+	{
+		List<WebElement> Days = driver.findElements(By.xpath("//div[contains(@class,'ui-datepicker-group-last')] //a[@class='ui-state-default']"));
+		System.out.println(Days.size());
+		for(WebElement Day:Days)
+		{
+			System.out.println(Day.getText());
+			if(Day.getText().equals(departuredate))
+			{
+				Day.click();
+				break;
+			}
+
+	}
+		break;
+	}
+	else
+	{
+		driver.findElement(By.xpath("//span[@class='ui-icon ui-icon-circle-triangle-e']")).click();
+
+		}
+		
+	}
+	}
+}

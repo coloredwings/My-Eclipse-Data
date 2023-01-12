@@ -1,0 +1,31 @@
+package TESTNG;
+
+import org.testng.annotations.Test;
+
+public class BasicTestng {
+	@Test
+	public void Demo1()
+	{
+		
+		System.out.println("hi");
+	}
+	@Test
+	public void Demo2()
+	{
+		
+		System.out.println("welcome");
+	}
+	@Test
+	public void Demo3()
+	{
+		
+		System.out.println("to");
+	}
+	@Test
+	public void Demo4()
+	{
+		
+		System.out.println("belgium");
+	}
+			
+}

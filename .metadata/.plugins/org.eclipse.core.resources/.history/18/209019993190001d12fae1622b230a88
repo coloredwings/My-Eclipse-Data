@@ -1,0 +1,36 @@
+package FirstPackage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class dynamicdropdown {
+	static WebDriver driver;
+public void Destinations(String From, String To)
+{
+	driver.findElement(By.id("ControlGroupSearchView_AvailabilitySearchInputSearchVieworiginStation1_CTXT")).click();
+	driver.findElement(By.xpath("//a[@value='"+From+"']")).click();
+	driver.findElement(By.xpath("//a[@value='"+To+"']")).click();
+}
+public void bookingdate(String departdate,String returndate )
+{
+	driver.findElement(By.xpath("//input[@type='text']")).click();
+	driver.findElement(By.xpath("//a[@value='"+departdate+"']")).click();
+	driver.findElement(By.xpath("//a[@value='"+returndate+"']")).click();
+}
+
+	public static void main(String[] args) {
+System.setProperty("webdriver.chrome.driver","C:\\Users\\91934\\Downloads\\chromedriver_win32\\chromedriver.exe");
+ driver=new ChromeDriver();
+driver.get("https://book.spicejet.com");
+driver.manage().window().maximize();
+dynamicdropdown dd=new dynamicdropdown();
+dd.Destinations("BLR","MAA");
+	
+	
+	
+	
+	
+	}
+
+}

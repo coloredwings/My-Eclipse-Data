@@ -1,0 +1,11 @@
+package FirstPackage;
+
+public class Abstractclass {
+
+	public static void main(String[] args) {
+		// when u want to use both implemented and unimplemented use abstract
+		//
+
+	}
+
+}

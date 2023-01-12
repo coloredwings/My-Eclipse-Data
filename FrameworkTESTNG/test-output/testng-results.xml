@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-01-10T18:09:12Z" name="Default suite" finished-at="2023-01-10T18:09:12Z" duration-ms="23">
+    <groups>
+    </groups>
+    <test started-at="2023-01-10T18:09:12Z" name="Default test" finished-at="2023-01-10T18:09:12Z" duration-ms="23">
+      <class name="TESTNG.MortgageLoan">
+        <test-method signature="MortgageLoanbranchlogin()[pri:0, instance:TESTNG.MortgageLoan@16b2bb0c]" started-at="2023-01-10T19:09:12Z" name="MortgageLoanbranchlogin" finished-at="2023-01-10T19:09:12Z" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MortgageLoanbranchlogin -->
+        <test-method signature="MortgageLoanweblogin()[pri:0, instance:TESTNG.MortgageLoan@16b2bb0c]" started-at="2023-01-10T19:09:12Z" name="MortgageLoanweblogin" finished-at="2023-01-10T19:09:12Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MortgageLoanweblogin -->
+      </class> <!-- TESTNG.MortgageLoan -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

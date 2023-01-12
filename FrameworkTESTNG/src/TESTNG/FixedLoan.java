@@ -1,0 +1,71 @@
+package TESTNG;
+
+import org.testng.annotations.Test;
+
+public class FixedLoan {
+	@Test
+public void fixedloanweblogin()
+{
+	System.out.println("fixedloan from web");
+}
+	@Test
+	public void fixedloanweballusers()
+	{
+		System.out.println("fixedloan for all users from web");
+	}
+	@Test
+	public void fixedloanwebvalidusers()
+	{
+		System.out.println("fixedloan for valid users from web");
+	}
+	@Test
+	public void fixedloanwebinvalidusers()
+	{
+		System.out.println("fixedloan for invalid users from web");
+	}
+		@Test
+	public void fixedloanapplogin()
+	{
+		System.out.println("fixedloan from app");
+	}
+		@Test
+		public void fixedloanappallusers()
+		{
+			System.out.println("fixedloan for all users from app");
+		}
+		@Test
+		public void fixedloanappvalidusers()
+		{
+			System.out.println("fixedloan for valid users from app");
+		}
+		@Test
+		public void fixedloanappinvalidusers()
+		{
+			System.out.println("fixedloan for invalid users from app");
+		}
+		
+	@Test
+	public void fixedloanbranchlogin()
+	{
+		System.out.println("fixedloan from branch");
+	}
+	@Test
+	public void fixedloanbranchallusers()
+	{
+		System.out.println("fixedloan for all users from branch");
+	}
+	@Test(dependsOnMethods= {"fixedloanbranchallusers"})
+	//current testcase will be execute after given testcase is executed but no order it can be right after or later but 
+	//only after given testcase is executed
+	public void fixedloanbranchvaliduser()
+	{
+		System.out.println("fixedloan for valid users from branch");
+	}
+	@Test
+	public void fixedloanbranchinvaliduser()
+	{
+		System.out.println("fixedloan for invalid users from branch");
+	}
+
+//testcases are executed randomly not in order 
+}

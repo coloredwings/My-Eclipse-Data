@@ -1,0 +1,21 @@
+package TESTNG;
+
+import org.testng.annotations.Test;
+
+public class FixedLoan {
+	@Test
+public void fixedloanweblogin()
+{
+	System.out.println("fixedloan from web");
+}
+	@Test
+	public void fixedloanapplogin()
+	{
+		System.out.println("fixedloan from app");
+	}
+	@Test(groups= {"regression"})
+	public void fixedloanbranchlogin()
+	{
+		System.out.println("fixedloan from branch");
+	}
+}
